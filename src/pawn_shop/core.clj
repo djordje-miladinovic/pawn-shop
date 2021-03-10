@@ -1,6 +1,9 @@
-(ns pawn-shop.core)
+(ns pawn-shop.core
+  (:use compojure.core)
+  (:require [compojure.route :as route]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn foo [name] (str "Hello, " name))
+
+(defroutes handler
+           (GET "/" [] (foo "Djordje"))
+           (route/resources "/"))
