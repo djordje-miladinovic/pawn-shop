@@ -5,9 +5,10 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [ring "1.9.1"]
+                 [ring/ring-json "0.5.0"]
                  [compojure "1.6.2"]
                  [hiccup "1.0.5"]]
   :repl-options {:init-ns pawn-shop.core}
   :plugins [[lein-ring "0.12.5"]]
-  :ring {:handler pawn-shop.core/handler}
+  :ring {:handler pawn-shop.core/app}
 )
