@@ -1,9 +1,8 @@
 (ns pawn-shop.core
   (:use compojure.core)
-  (:require [compojure.route :as route]))
-
-(defn foo [name] (str "Hello, " name))
+  (:require [compojure.route :as route]
+            [pawn-shop.view :as view]))
 
 (defroutes handler
-           (GET "/" [] (foo "Djordje"))
+           (GET "/" [] (view/demo-page))
            (route/resources "/"))
